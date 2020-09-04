@@ -3,7 +3,7 @@ import './Results.css'
 
 class Results extends React.Component{
     createJsx = () => {
-        const res = this.props.results.map(x => <p>{x}</p>);
+        const res = this.props.results.map(x => <p key={x}>{x}</p>);
         return res;
     }
     render(){
