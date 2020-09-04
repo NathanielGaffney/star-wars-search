@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+//import { Route, Link } from 'react-router-dom';
+import Header from './Header/Header'
+import Input from './Input/Input'
+import Results from './Results/Results'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const baseUrl = 'https://swapi-thinkful.herokuapp.com/api/';
+
+class App extends React.Component {
+  state = {
+    results:[],
+  }
+  
+  handleGetState = (x) => {
+    this.setState({
+      results: x,
+    });
+  }
+  
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Input handleGetState={this.handleGetState}/>
+        <Results results={this.state.results}/>
+      </div>
+    )
+  }
 }
 
 export default App;

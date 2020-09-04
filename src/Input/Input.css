@@ -1,0 +1,13 @@
+.input {
+    background-color: lightskyblue;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+    align-items: center;
+    margin: 5%;
+}
